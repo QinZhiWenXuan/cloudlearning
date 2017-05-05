@@ -1,0 +1,23 @@
+logging:
+  path: E:/log/cloud-learning/zuul-server/
+
+spring:
+  application:
+    name: zuul-server
+server:
+  port: 22227
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:11111/eureka/
+
+
+zuul:
+  routes:
+    feign:
+      path: /feign/**
+      serviceId: feigns-service
+    ribbon:
+      path: /ribbon/**
+      serviceId: ribbons-service
+
